@@ -1,5 +1,5 @@
 """
-Streamlit viewer for the Hugoton master petrophysical database.
+Streamlit viewer for the Anadarko master petrophysical database.
 
 Reads master_log_database.parquet, lets the user pick a well (UWI) in the
 sidebar, and renders a Plotly triple-combo plot (GR / ILD / RHOB) with
@@ -18,7 +18,7 @@ import streamlit as st
 from plotly.subplots import make_subplots
 
 PARQUET_PATH = Path(__file__).resolve().parent / "master_log_database.parquet"
-st.set_page_config(page_title="Hugoton Well Log Viewer", layout="wide")
+st.set_page_config(page_title="Anadarko Well Log Viewer", layout="wide")
 
 @st.cache_data
 def load_data() -> pd.DataFrame:
@@ -76,7 +76,7 @@ well_tops = {
 
 # ---------------- triple combo plot ----------------
 st.title(f"{header['WELL_NAME']} {header['LABEL']}")
-st.caption("Anurag Kulkarni Summer 2026 Experiment - Hugoton He2 Project Well Visualizer")
+st.caption("Anurag Kulkarni Summer 2026 Experiment - Anadarko Project Well Visualizer")
 st.caption("Generated in Python using Claude Code, slightly modified to taste")
 st.caption(f"UWI/API {uwi} — Visualization of Gamma Ray Log, Bulk Density, Deep Resistivity, and Photoelectric Log")
 
